@@ -1,4 +1,4 @@
-package posters.ui.tests;   // 包名保持一致
+package posters.ui.tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,7 +15,9 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUp() {
+        // 指定本地 ChromeDriver 路径（放在项目根目录）
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

@@ -7,10 +7,10 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 
-public class LoginTest extends BaseTest {
+public class InvalidLoginTest extends BaseTest {
 
     @Test
-    public void testValidLogin() {
+    public void testInvalidLogin() {
         // 1. 打开首页
         driver.get("http://localhost:8080");
 
@@ -25,22 +25,15 @@ public class LoginTest extends BaseTest {
         // 4. 等待登录表单加载
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
 
-        // 5. 输入邮箱和密码
+        // 5. 输入正确邮箱，错误密码
         driver.findElement(By.id("email")).sendKeys("1431908235@qq.com");
-        driver.findElement(By.id("password")).sendKeys("12345678");
+        driver.findElement(By.id("password")).sendKeys("wrongpassword");
 
         // 6. 点击登录按钮
         driver.findElement(By.id("btn-login")).click();
 
-        // 7. 等待登录后首页加载完成
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("body")));
-
-        // 8. 再次点击头像图标，展开下拉菜单
-        WebElement menuTriggerAfterLogin = wait.until(ExpectedConditions.elementToBeClickable(By.id("show-user-menu")));
-        menuTriggerAfterLogin.click();
-
-        // 9. 等待 Logout 链接出现（下拉菜单中）
-        WebElement logoutLink = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("go-to-logout")));
-        assertTrue(logoutLink.isDisplayed(), "登录失败，未找到 Logout 链接");
+        // 7. 等待错误提示出现（页面显示红色错误信息）
+        WebElement errorMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("alert-danger")));
+        assertTrue(errorMsg.isDisplayed(), "未显示错误提示");
     }
 }
