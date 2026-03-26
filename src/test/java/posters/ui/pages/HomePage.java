@@ -11,12 +11,14 @@ public class HomePage {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    // 元素定位器
+    // 元素定位
     private By userMenuTrigger = By.id("show-user-menu");
     private By signInLink = By.id("go-to-login");
-    private By searchInput = By.name("keyword");
+    private By searchInput = By.name("q");
     private By searchButton = By.cssSelector("button[type='submit']");
-    private By firstProduct = By.cssSelector(".product-item a");
+    private By firstProductLink = By.cssSelector("a[href*='/product/']");
+    private By logoutLink = By.id("go-to-logout");
+    private By cartCount = By.id("header-cart-count");
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -42,6 +44,15 @@ public class HomePage {
     }
 
     public void clickFirstProduct() {
-        wait.until(ExpectedConditions.elementToBeClickable(firstProduct)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(firstProductLink)).click();
+    }
+
+    public boolean isLogoutDisplayed() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(logoutLink)).isDisplayed();
+    }
+
+    public int getCartCount() {
+        String text = wait.until(ExpectedConditions.visibilityOfElementLocated(cartCount)).getText();
+        return Integer.parseInt(text);
     }
 }

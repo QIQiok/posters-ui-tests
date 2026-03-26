@@ -29,4 +29,8 @@ public class LoginPage {
         driver.findElement(passwordInput).sendKeys(password);
         driver.findElement(loginButton).click();
     }
+
+    public boolean isErrorDisplayed() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("alert-danger"))).isDisplayed();
+    }
 }
