@@ -64,6 +64,7 @@
 		<maven.compiler.source>21</maven.compiler.source>
 		<maven.compiler.target>21</maven.compiler.target>
 		<java.version>21</java.version>
+		<allure.version>2.27.0</allure.version>  <!-- 改为稳定版本 -->
 		<copyright>Copyright (c) ${project.inceptionYear}-2024 ${project.organization.name}</copyright>
 	</properties>
 
@@ -72,6 +73,19 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<systemPropertyVariables>
+						<allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+					</systemPropertyVariables>
+					<!-- 可选：只运行 UI 测试包 -->
+					<includes>
+						<include>**/posters/ui/tests/*.java</include>
+					</includes>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -176,7 +190,7 @@
 		</dependency>
 
 		<!-- =================== 新增测试依赖 =================== -->
-		<!-- TestNG 测试框架 -->
+		<!-- TestNG 测试框架（只保留一个） -->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
@@ -199,10 +213,12 @@
 			<version>5.6.3</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- Allure TestNG 适配器 -->
 		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>7.7.1</version>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<version>${allure.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- =================================================== -->

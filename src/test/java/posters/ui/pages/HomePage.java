@@ -11,7 +11,6 @@ public class HomePage {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    // 元素定位
     private By userMenuTrigger = By.id("show-user-menu");
     private By signInLink = By.id("go-to-login");
     private By searchInput = By.name("q");
@@ -52,7 +51,14 @@ public class HomePage {
     }
 
     public int getCartCount() {
-        String text = wait.until(ExpectedConditions.visibilityOfElementLocated(cartCount)).getText();
+        // 直接等待元素可见并返回文本，避免 stale
+        String text = wait.until(driver -> {
+            try {
+                return driver.findElement(cartCount).getText();
+            } catch (Exception e) {
+                return null;
+            }
+        });
         return Integer.parseInt(text);
     }
 }

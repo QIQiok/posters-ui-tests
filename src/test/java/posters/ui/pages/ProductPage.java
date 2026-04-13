@@ -12,6 +12,7 @@ public class ProductPage {
     private WebDriverWait wait;
 
     private By addToCartButton = By.id("btn-add-to-cart");
+    private By viewCartLink = By.cssSelector("a[href='/en-US/cart']");  // 定位 View Cart 链接
 
     public ProductPage(WebDriver driver) {
         this.driver = driver;
@@ -20,5 +21,10 @@ public class ProductPage {
 
     public void addToCart() {
         wait.until(ExpectedConditions.elementToBeClickable(addToCartButton)).click();
+    }
+
+
+    public void viewCart() {
+        wait.until(ExpectedConditions.elementToBeClickable(By.linkText("View Cart"))).click();
     }
 }
