@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Apr 02 17:34:17 CST 2026","Thu Apr 02 17:34:18 CST 2026","966","Default Suite","posters-demo-store-develop","posters.ui.tests.InvalidLoginTest","posters.ui.tests.InvalidLoginTest","testInvalidLogin","testInvalidLogin",""
+"passed","Thu Apr 02 17:34:33 CST 2026","Thu Apr 02 17:34:34 CST 2026","588","Default Suite","posters-demo-store-develop","posters.ui.tests.SearchTest","posters.ui.tests.SearchTest","testSearch","testSearch",""
+"passed","Thu Apr 02 17:34:21 CST 2026","Thu Apr 02 17:34:32 CST 2026","11526","Default Suite","posters-demo-store-develop","posters.ui.tests.LogoutTest","posters.ui.tests.LogoutTest","testLogout","testLogout",""
+"passed","Thu Apr 02 17:34:14 CST 2026","Thu Apr 02 17:34:16 CST 2026","2164","Default Suite","posters-demo-store-develop","posters.ui.tests.CheckoutTest","posters.ui.tests.CheckoutTest","testCheckout","testCheckout",""
+"passed","Thu Apr 02 17:34:11 CST 2026","Thu Apr 02 17:34:13 CST 2026","2316","Default Suite","posters-demo-store-develop","posters.ui.tests.CartTest","posters.ui.tests.CartTest","testAddToCart","testAddToCart",""
+"passed","Thu Apr 02 17:34:19 CST 2026","Thu Apr 02 17:34:20 CST 2026","1070","Default Suite","posters-demo-store-develop","posters.ui.tests.LoginTest","posters.ui.tests.LoginTest","testValidLogin","testValidLogin",""

@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Apr 13 13:00:01 CST 2026","Mon Apr 13 13:00:04 CST 2026","2397","Default Suite","posters-demo-store-develop","posters.ui.tests.CheckoutTest","posters.ui.tests.CheckoutTest","testCheckout","testCheckout",""
+"passed","Mon Apr 13 13:00:05 CST 2026","Mon Apr 13 13:00:06 CST 2026","1062","Default Suite","posters-demo-store-develop","posters.ui.tests.InvalidLoginTest","posters.ui.tests.InvalidLoginTest","testInvalidLogin","testInvalidLogin",""
+"passed","Mon Apr 13 12:59:58 CST 2026","Mon Apr 13 13:00:00 CST 2026","2475","Default Suite","posters-demo-store-develop","posters.ui.tests.CartTest","posters.ui.tests.CartTest","testAddToCart","testAddToCart",""
+"passed","Mon Apr 13 13:00:22 CST 2026","Mon Apr 13 13:00:22 CST 2026","819","Default Suite","posters-demo-store-develop","posters.ui.tests.SearchTest","posters.ui.tests.SearchTest","testSearch","testSearch",""
+"passed","Mon Apr 13 13:00:07 CST 2026","Mon Apr 13 13:00:08 CST 2026","1154","Default Suite","posters-demo-store-develop","posters.ui.tests.LoginTest","posters.ui.tests.LoginTest","testValidLogin","testValidLogin",""
+"passed","Mon Apr 13 13:00:09 CST 2026","Mon Apr 13 13:00:21 CST 2026","11609","Default Suite","posters-demo-store-develop","posters.ui.tests.LogoutTest","posters.ui.tests.LogoutTest","testLogout","testLogout",""
